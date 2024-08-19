@@ -14,7 +14,7 @@ $dbscore = $usercheck["score"];
 if($dbscore <= $score){
 mysqli_query($conn, "UPDATE users SET score=$score, context=$context, name='$name' WHERE udid='$udid'");
 }else{
-mysqli_query($conn, "UPDATE users SET context=$context, name='$name' WHERE udid='$udid'");
+mysqli_query($conn, "UPDATE users SET name='$name' WHERE udid='$udid'");
 }
 }
 $sql = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM `users` WHERE score>1010000000 AND banan=0 ORDER BY score DESC;"));

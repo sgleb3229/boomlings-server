@@ -25,7 +25,7 @@ $context = $dbcontext;
 }
 $sql = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM `users` WHERE score>'$score' AND banan=0 ORDER BY score DESC;"));
 $sql1 = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM `users` WHERE score<'$score' AND banan=0 ORDER BY score DESC;"));
-$rank = mysqli_fetch_array(mysqli_query($conn, "SELECT count(*) FROM users WHERE score>'$score'"));
+$rank = mysqli_fetch_array(mysqli_query($conn, "SELECT count(*) FROM users WHERE score>'$score' AND score>'1010000000'"));
 echo "{$rank['count(*)']}__ ";
 #echo "0__ ";
 foreach ($sql as $nado) {

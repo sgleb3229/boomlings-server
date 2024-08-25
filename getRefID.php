@@ -8,5 +8,5 @@ $xzlol = 0;
 $user = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM `users` WHERE udid='$udid';"));
 foreach($user as $no){$xzlol += 1;}
 if($xzlol == 0){mysqli_query($conn, "INSERT INTO users (udid,refID) VALUES ('$udid','$refID')");}else{$user = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `users` WHERE udid='$udid';")); $ref = $user['refID'];
-if($ref == ""){mysqli_query($conn, "UPDATE user SET referral_code = '$refID' WHERE udid = '$udid'");}else{$refID = $ref;}}
+if($ref == ""){mysqli_query($conn, "UPDATE users SET refID = '$refID' WHERE udid = '$udid'");}else{$refID = $ref;}}
 echo $refID;
